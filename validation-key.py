@@ -1,5 +1,9 @@
 import openai
 import os
+from dotenv import load_dotenv
+
+# Load the .env file
+load_dotenv()
 
 def check_openai_api_key(api_key):
     client = openai.OpenAI(api_key=api_key)

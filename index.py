@@ -12,9 +12,12 @@ try:
   completion = client.chat.completions.create(
     model="gpt-4",
     messages=[
-      {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
-      {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
-    ]
+      {"role": "system", "content": "You will be provided with a message."},
+      {"role": "user", "content": "How are you?"}
+    ],
+    temperature=0.8,
+    max_tokens=64,
+    top_p=1
   )
   print(json.dumps(completion.dict(), indent=4))
 except Exception as e:

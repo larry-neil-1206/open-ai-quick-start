@@ -1,4 +1,5 @@
 import openai
+import os
 
 def check_openai_api_key(api_key):
     client = openai.OpenAI(api_key=api_key)
@@ -11,7 +12,7 @@ def check_openai_api_key(api_key):
         return True
 
 
-api_key = "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"
+api_key = os.getenv("OPENAI_KEY")
 is_valid = check_openai_api_key(api_key)
 
 if is_valid:
